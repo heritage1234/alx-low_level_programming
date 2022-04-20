@@ -7,11 +7,14 @@
  * Return: void that means our answer is correct
  */
 
-void swap_int(int *a, int *b)
+int _strlen(char *s)
 {
-int f;
+	int i;
+	int length = 0;
 
-f = *a;
-*a = *b;
-*b = f;
+	for (i = 0; s[i] != '\0'; i++)
+	{
+		length++;
+	}
+	return (length);
 }
