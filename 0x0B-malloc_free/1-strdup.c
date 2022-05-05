@@ -1,9 +1,10 @@
 #include <stdlib.h>
 #include "main.h"
 /**
- *_strlen - count array
- *@s: array of elements
- *Return: 1
+ * *_strdup - copies the string given as parameter
+ * @str: string to duplicate
+ *
+ * Return: pointer to the copied string (Success), NULL (Error)
  */
 char *_strdup(char *str)
 {
