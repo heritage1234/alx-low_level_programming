@@ -1,4 +1,5 @@
-
+#include <stdlib.h>
+#include <stdio.h>
 #include "main.h"
 /**
  *_strlen - count array
@@ -8,23 +9,26 @@
 char *_strdup(char *str)
 {
 	char *duplicate;
-	int index, len = 0;
+	int i, len = 0;
 
 	if (str == NULL)
 		return (NULL);
 
-	for (index = 0; str[index]; index++)
-		len++;
+	while (*(str + i))
+		len++, i++;
+	len++; /* add null terminator to length */
 
-	duplicate = malloc(sizeof(char) * (len + 1));
+	duplicate_str = malloc(sizeof(char) * len); /* allocate memory */
 
-	if (duplicate == NULL)
+	if (duplicate_str == NULL) /* validate memory */
 		return (NULL);
 
-	for (index = 0; str[index]; index++)
-		duplicate[index] = str[index];
+	i = 0;
+	while (i < len)
+	{
+		*(duplicate_str + i) = *(str + i);
+		i++;
+	}
 
-	duplicate[len] = '\0';
-
-	return (duplicate);
+	return (duplicate_str);
 }
