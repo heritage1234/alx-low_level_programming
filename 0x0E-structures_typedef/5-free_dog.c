@@ -1,21 +1,24 @@
-#include <stdlib.h>
 #include "dog.h"
+#include <stdio.h>
 
 /**
- * free_dog- free memory
- *@d: array
- * Description: Free memory for sturct
+ * print_dog - prints a dog
+ *
+ * @d: dog to print
+ *
+ * Return: void
  */
-
-void free_dog(dog_t *d)
+void print_dog(struct dog *d)
 {
-	if (d == NULL)
+	if (d == 0)
 		return;
-
-	if (d->name)
-		free(d->name);
-	if(d->owner:
-		free(d->owner);
-
-	free(d);
+	if (d->name == 0)
+		printf("Name: (nil)\n");
+	else
+		printf("Name: %s\n", d->name);
+	printf("Age: %f\n", d->age);
+	if (d->owner == 0)
+		printf("Owner: (nil)\n");
+	else
+		printf("Owner: %s\n", d->owner);
 }
