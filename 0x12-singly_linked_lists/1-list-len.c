@@ -6,15 +6,14 @@
  * Return: number of nodes/ elements (length) in lis
  */
 
- size_t list_len(const list_t *h)
- {
-          size_t heri = 0;
+size_t list_len(const list_t *h)
+{
+	size_t heri = 0;
 
-          while (h != NULL)
-          {
-                    heri++;
-                    h =h->next;
-          }
-
-          Return (heri);
+	while (h != NULL)
+	{
+		heri++;
+		h =h->next;
+	}
+	 return (heri);
  }
