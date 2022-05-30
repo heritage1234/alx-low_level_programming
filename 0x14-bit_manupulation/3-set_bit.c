@@ -1,24 +1,17 @@
 #include "main.h"
 
 /**
- * set_bit - set bit to 1 at given index
- * @n: number
- * @index: index within binary number
- * Return: 1 if success, or -1 if error
+ * set_bit - sets a bit at a given index to 1
+ * @n: pointer to the number to change
+ * @index: index of the bit to set to 1
+ *
+ * Return: 1 for success, -1 for failure
  */
 int set_bit(unsigned long int *n, unsigned int index)
 {
-	unsigned int max_bits;
-	unsigned long int mask = 1;
-
-	/* validate index is not out of range */
-	max_bits = (sizeof(unsigned long int) * 8);
-	if (index > max_bits)
+	if (index > 63)
 		return (-1);
 
-	/* create mask with 1 at index (...00100...) to work on that index */
-	mask <<= index;
-	*n = (*n | mask);
-
+	*n = ((1UL << index) | *n);
 	return (1);
 }
